@@ -35,15 +35,15 @@ const Login = (props) => {
     isValid: null,
   });
 
-  useEffect(() => {
-    console.log('EFFECT RUNNING');
+  // useEffect(() => {
+  //   console.log('EFFECT RUNNING');
 
-    return () => {
-      console.log('EFFECT CLEANUP');
-    };
-  }, []);
+  //   return () => {
+  //     console.log('EFFECT CLEANUP');
+  //   };
+  // }, []);
 
-  const { isVali: emailIsValid } = emailState;
+  const { isValid: emailIsValid } = emailState;
   const { isValid: passwordIsValid } = passwordState;
 
   useEffect(() => {
@@ -60,14 +60,10 @@ const Login = (props) => {
 
   const emailChangeHandler = (event) => {
     dispatchEmail({ type: 'USER_INPUT', payload: event.target.value });
-
-    // setFormIsValid(event.target.value.includes('@') && passwordState.isValid);
   };
 
   const passwordChangeHandler = (event) => {
     dispatchPassword({ type: 'USER_INPUT', payload: event.target.value });
-
-    // setFormIsValid(emailState.isValid && event.target.value.trim().length > 6);
   };
 
   const validateEmailHandler = () => {
