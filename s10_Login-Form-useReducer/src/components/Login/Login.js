@@ -11,7 +11,7 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
-  const [emailState, dispatchEmail] = useReduser();
+  const [emailState, dispatchEmail] = useReducer();
 
   useEffect(() => {
     console.log('EFFECT RUNNING');
