@@ -2,6 +2,7 @@ import componentsImage from './assets/images/components.png';
 import stateImage from './assets/images/state.png';
 import eventsImage from './assets/images/events.png';
 import Header from './components/Header/Header';
+import Concept from './components/Concept/Concept';
 
 const concepts = [
   {
@@ -29,14 +30,7 @@ function App() {
     <div>
       <Header />
       <ul id='concepts'>
-        <li className='concept'>
-          <img
-            src={concepts[0].image}
-            alt={concepts[0].title}
-          />
-          <h2>{concepts[0].title}</h2>
-          <p>{concepts[0].description}</p>
-        </li>
+        <Concept props={concepts} />
       </ul>
     </div>
   );
