@@ -1,7 +1,7 @@
-import keyConceptsImage from './assets/images/key-concepts.png';
 import componentsImage from './assets/images/components.png';
 import stateImage from './assets/images/state.png';
 import eventsImage from './assets/images/events.png';
+import Header from './components/Header/Header';
 
 const concepts = [
   {
@@ -27,6 +27,7 @@ const concepts = [
 function App() {
   return (
     <div>
+      <Header />
       <ul id='concepts'>
         <li className='concept'>
           <img
