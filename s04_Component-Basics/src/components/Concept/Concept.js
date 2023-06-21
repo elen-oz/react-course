@@ -6,7 +6,7 @@ const Concept = ({ props }) => {
       {props.map((item) => (
         <li
           className='concept'
-          key={item.tutle}
+          key={item.title}
         >
           <img
             src={item.image}
