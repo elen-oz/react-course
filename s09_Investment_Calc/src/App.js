@@ -6,7 +6,6 @@ import ResultsTable from './components/ResultsTable';
 
 function App() {
   const [userInput, setUserInput] = useState(null);
-  const [isAvailable, setIsAvailable] = useState(true);
 
   const calculateHandler = (userInput) => {
     setUserInput(userInput);
