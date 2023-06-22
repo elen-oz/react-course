@@ -36,9 +36,14 @@ function App() {
     <div>
       <Header />
       <UserInput onCalculate={calculateHandler} />
-      {/* ! Todo: Show below table conditionally (only once result data is available) */}
-      {/* ! Show fallback text if no data is available */}
-      {isAvailable ? <ResultsTable /> : <p>Data not available!</p>}
+
+      {!userInput && <p>No Investment calculated yet.</p>}
+      {userInput && (
+        <ResultsTable
+          data={yearlyData}
+          initialInvestment={userInput['current-savings']}
+        />
+      )}
     </div>
   );
 }
