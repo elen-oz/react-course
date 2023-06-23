@@ -25,7 +25,7 @@ const UserInput = (props) => {
     setUserInput((prevInput) => {
       return {
         ...prevInput,
-        [input]: +value, // the "+" converts the string value to a number
+        [input]: +value,
       };
     });
   };
