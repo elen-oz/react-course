@@ -18,6 +18,8 @@ const NewTodo: React.FC = () => {
     }
 
     todoCtx.addTodo(enteredText);
+
+    todoTextInputRef.current!.value = '';
   };
 
   return (
