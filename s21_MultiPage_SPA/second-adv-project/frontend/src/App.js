@@ -28,6 +28,7 @@ const router = createBrowserRouter([
 
               if (!response.ok) {
                 // ...
+                throw new Error('Error fetching events');
               } else {
                 const resData = await response.json();
                 return resData.events;
