@@ -5,9 +5,9 @@ import EventsList from '../components/EventsList';
 function EventsPage() {
   const events = useLoaderData();
 
-  if (events.isError) {
-    return <p>{events.message}</p>;
-  }
+  // if (events.isError) {
+  //   return <p>{events.message}</p>;
+  // }
 
   return <EventsList events={events} />;
 }
@@ -15,10 +15,11 @@ function EventsPage() {
 export default EventsPage;
 
 export async function loader() {
-  const response = await fetch('http://localhost:8080/events');
+  const response = await fetch('http://localhost:8080/ev1ents');
 
   if (!response.ok) {
-    return { isError: true, message: 'Error fetching events' };
+    // return { isError: true, message: 'Error fetching events' };
+    throw new Error('Error fetching events');
   } else {
     const resData = await response.json();
     return resData.events;
