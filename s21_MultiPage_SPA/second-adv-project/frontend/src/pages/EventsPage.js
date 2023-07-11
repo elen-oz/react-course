@@ -19,7 +19,8 @@ export async function loader() {
 
   if (!response.ok) {
     // return { isError: true, message: 'Error fetching events' };
-    throw new Error('Error fetching events');
+    // throw new Error('Error fetching events');
+    throw new Response(JSON.stringify({ message: 'Error fetching events' }), { status: 500 });
   } else {
     const resData = await response.json();
     return resData.events;
