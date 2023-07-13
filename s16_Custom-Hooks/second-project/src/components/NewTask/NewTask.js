@@ -12,7 +12,8 @@ const NewTask = (props) => {
     setError(null);
     try {
       const response = await fetch(
-        'https://react-http-6b4a6.firebaseio.com/tasks.json',
+        'https://react-hooks-342ac-default-rtdb.europe-west1.firebasedatabase.app/tasks.json',
+
         {
           method: 'POST',
           body: JSON.stringify({ text: taskText }),
@@ -27,6 +28,7 @@ const NewTask = (props) => {
       }
 
       const data = await response.json();
+      console.log('data: ', data);
 
       const generatedId = data.name; // firebase-specific => "name" contains generated id
       const createdTask = { id: generatedId, text: taskText };
@@ -40,7 +42,10 @@ const NewTask = (props) => {
 
   return (
     <Section>
-      <TaskForm onEnterTask={enterTaskHandler} loading={isLoading} />
+      <TaskForm
+        onEnterTask={enterTaskHandler}
+        loading={isLoading}
+      />
       {error && <p>{error}</p>}
     </Section>
   );
